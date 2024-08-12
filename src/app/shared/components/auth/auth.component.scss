@@ -1,0 +1,16 @@
+.main{
+    height: 100vh;
+    position: fixed;
+    background-color: blanchedalmond;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+        .auth-form{
+            width: 250px;
+            max-width: 90%;
+        }
+}

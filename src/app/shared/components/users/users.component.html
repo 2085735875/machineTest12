@@ -1,0 +1,26 @@
+
+<div class="row mb-4">
+    <div class="col-md-12 mb-4 text-right">
+        <button mat-raised-button color="accent" routerLink="/users/addUser">Add User</button>
+    </div>
+    <div class="col-md-4">
+        <ul class="list-group" *ngIf="usersArray.length > 0 ; else noUser">
+            <li 
+            [queryParams]="{
+                userRole : user.userRole
+            }"
+            class="list-group-item user"  *ngFor="let user of usersArray" [routerLink]="['/users', user.userId]">
+                {{user.userName}}
+            </li>
+        </ul>
+
+        <ng-template #noUser>
+            <p class="alert alert-info">There is no user found yet!</p>
+        </ng-template>
+    </div>
+    <div class="col-md-4">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<button mat-raised-button color="primary" routerLink="/products">Go to Products</button>
+

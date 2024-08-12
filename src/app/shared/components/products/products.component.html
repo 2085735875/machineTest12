@@ -1,0 +1,25 @@
+
+<div class="row mb-4">
+    <div class="col-md-12 mb-4 text-right">
+        <button mat-raised-button color="accent" routerLink="/products/addProduct">Add Product</button>
+    </div>
+    <div class="col-md-4">
+        <ul class="list-group" *ngIf="productArray.length > 0 ; else noProduct">
+            <li class="list-group-item prod"
+            [queryParams]="{
+                canEdit : prod.canReturn
+            }"
+            *ngFor="let prod of productArray" [routerLink]="['/products', prod.pid]">
+                {{prod.pname}}
+            </li>
+        </ul>
+
+        <ng-template #noProduct>
+            <p class="alert alert-info">There is no product found yet!</p>
+        </ng-template>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<button mat-raised-button color="primary" routerLink="/users">Go to Users</button>

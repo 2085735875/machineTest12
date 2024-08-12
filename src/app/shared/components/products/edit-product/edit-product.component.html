@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-md-4">
+          <mat-card>
+                <form [formGroup]="prodForm" (ngSubmit)="onProductAdd()">
+                  <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Product Name</mat-label>
+                        <input matInput formControlName="pname" id="pname">
+                      </mat-form-field>
+                  </div>
+                     <div>
+                        <mat-form-field appearance="fill">
+                            <mat-label> Product URL</mat-label>
+                            <input matInput formControlName="pUrl" id="pUrl">
+                          </mat-form-field>
+                     </div>
+                      <div>
+                        <mat-form-field appearance="fill"> 
+                          <mat-label>Product_Status</mat-label> 
+                         <mat-select formControlName="pstatus" id="pstatus">
+                           <mat-option value="In-Progress">In-Progress</mat-option>
+                           <mat-option value="Delivered">Delivered</mat-option>
+                           <mat-option value="Dispatched">Dispatched</mat-option>
+                         </mat-select> 
+                     </mat-form-field>
+                      </div>
+                    <mat-form-field appearance="fill"> 
+                      <mat-label>Select_return</mat-label> 
+                     <mat-select formControlName="canReturn" id="canReturn">
+                       <mat-option value="1">1</mat-option>
+                       <mat-option value="0">0</mat-option>
+                     </mat-select> 
+                 </mat-form-field>
+                      <mat-card-actions>
+                        <button mat-raised-button *ngIf="isinEditMode" [disabled]="!isinEditMode2" class="btn-block" type="button" color="accent" (click)="onProdUpdate()">Update Product</button>
+                        <button mat-raised-button *ngIf="!isinEditMode"  type="submit" class="btn-block" color="accent" >Create Product</button>
+                        </mat-card-actions>
+                </form>
+            </mat-card>
+    </div>
+</div>

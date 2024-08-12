@@ -1,0 +1,16 @@
+<mat-card class="example-card">
+    <mat-card-title-group>
+      <mat-card-title>{{userObj.userName}}</mat-card-title>
+      <mat-card-subtitle>{{userObj.profession}}</mat-card-subtitle>
+      <img mat-card-sm-image [src]=userObj.url >
+    </mat-card-title-group>
+    <mat-card-content>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt exercitationem accusantium.
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+      <button mat-button color="primary" [routerLink]="['/users', this.userObj.userId, 'edit']" [queryParamsHandling]="'preserve'">EDITE</button>
+      <button mat-button color="warn" (click)="onUserRemove()">REMOVE</button>
+    </mat-card-actions>
+</mat-card>
+  
